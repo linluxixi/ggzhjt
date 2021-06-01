@@ -1,0 +1,4 @@
+PUT http://localhost:5000/gg_user/ 
+Content-Type: application/x-www-form-urlencoded
+
+user_id=10&user_password=098765

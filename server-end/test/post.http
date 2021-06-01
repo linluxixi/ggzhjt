@@ -1,0 +1,4 @@
+POST http://localhost:5000/gg_event/add
+Content-Type: application/x-www-form-urlencoded
+
+event_mark=标记&user_name=刘雨晴&event_describe=紧急通知

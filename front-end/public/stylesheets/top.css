@@ -1,0 +1,221 @@
+/* 1.顶部导航 */
+/* 2.系统logo */
+/* 3.搜索框 */
+/* 4.功能菜单 */
+/* 5.测量/标注工具条 */
+/* 6.时间 */
+/* 7.天气 */
+/* 8.用户 */
+
+/* *****************************顶部导航***************************** */
+#top {
+  height: 66px;
+  padding-top: 10px;
+  position: relative;
+  background-color: #444e5a;
+  z-index: 9;
+}
+
+/* *****************************系统logo***************************** */
+#symbol {
+  width: 200px;
+  position: absolute;
+  top: -2px;
+  left: 20px;
+  text-align: center;
+}
+
+#systemName {
+  margin: auto 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* *****************************搜索框***************************** */
+#search {
+  position: absolute;
+  top: 21px;
+  left: 220px;
+  width: 230px;
+  height: 31px;
+  padding: 0 5px;
+  border: 1px solid #8bca95;
+}
+
+#searchContent {
+  width: 200px;
+  height: 30px;
+  border-right: 1px solid #8bca95;
+}
+
+#searchContent input {
+  width: 170px;
+  height: 30px;
+  font-size: 15px;
+  color: #fff;
+  margin: -30 20px 0 10px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#searchBtn {
+  padding: 5px 1px 0 0;
+  cursor: pointer;
+}
+
+/* *****************************功能菜单***************************** */
+#function {
+  position: absolute;
+  top: 20px;
+  left: 450px;
+  height: 30px;
+  font-size: 15px;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#function li.fl {
+  width: 75px;
+}
+
+#function li#userManage {
+  width: 90px;
+}
+
+#function .fl li:hover {
+  color: #8bca95;
+}
+
+#function li.fl ul {
+  display: none;
+  margin-top: 10px;
+  background-color: #444e5a;
+  font-size: 12px;
+}
+
+#function li.fl ul li {
+  line-height: 30px;
+}
+
+/* *****************************测量/标注工具条***************************** */
+#measureTool,
+#labelTool {
+  display: none;
+  position: absolute;
+  top: 80px;
+  right: 250px;
+  width: 180px;
+  color: #fff;
+}
+
+#measureTool .title,
+#labelTool .title {
+  border-bottom: 2px solid #8bca95;
+  background-color: rgba(117, 123, 131, 0.7);
+}
+
+#measureTool .title span,
+#labelTool .title span {
+  margin-left: 5px;
+}
+
+#measureTool .title .close,
+#labelTool .title .close {
+  margin-right: 5px;
+}
+
+#measureTool .tool,
+#labelTool .tool {
+  background-color: rgba(223, 229, 236, 0.3);
+}
+
+#measureTool .tool i,
+#labelTool .tool i {
+  font-size: 22px;
+  font-weight: 600;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+#measureTool .tool i:hover,
+#labelTool .tool i:hover {
+  color: #2facff;
+}
+
+/* *****************************时间***************************** */
+#time {
+  position: absolute;
+  top: 5px;
+  right: 100px;
+  width: 130px;
+  height: 55px;
+  color: #fff;
+}
+
+#time ul i.iconfont {
+  font-size: 30px;
+  color: #8bca95;
+}
+
+#time ul li#nowTime {
+  height: 40px;
+}
+
+#time ul li#nowTime span {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 30px;
+  position: absolute;
+  top: 7px;
+  right: -5px;
+}
+
+#time ul li#nowDate {
+  margin-left: 10px;
+}
+
+/* *****************************天气***************************** */
+#weather {
+  position: absolute;
+  top: 77px;
+  left: 50px;
+  width: 380px;
+  height: 25px;
+  color: #fff;
+  background-color: rgba(223, 229, 236, 0.7);
+  border: 1px solid #999;
+  text-align: center;
+}
+
+#weather iframe {
+  margin-left: 10px;
+}
+
+/* *****************************用户***************************** */
+#user {
+  position: absolute;
+  right: 0px;
+  width: 95px;
+  height: 50px;
+}
+
+#userName {
+  position: absolute;
+  left: 40px;
+  top: 7px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#userAction {
+  font-size: 13px;
+  color: #fff;
+}
+
+#logout,
+#updatePassword {
+  cursor: pointer;
+}

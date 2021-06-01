@@ -1,0 +1,105 @@
+/* *****************************地图容器***************************** */
+#mapCon {
+  height: 588px;
+  position: relative;
+}
+
+/* *****************************放大/缩小***************************** */
+#mapCon .ol-zoom .ol-zoom-out {
+  margin-top: 204px;
+}
+
+#mapCon .ol-zoomslider {
+  background-color: transparent;
+  top: 2.3em;
+}
+
+#mapCon .ol-touch .ol-zoom .ol-zoom-out {
+  margin-top: 212px;
+}
+
+#mapCon .ol-touch .ol-zoomslider {
+  top: 2.75em;
+}
+
+#mapCon .ol-zoom-in .ol.has-tooltip:hover[role='tooltip'],
+#mapCon .ol-zoom-in .ol-has-tooltip:focus[role='tooltip'] {
+  top: 3px;
+}
+
+#mapCon .ol-zoom-out .ol-has-tooltip:hover[role='tooltip'],
+#mapCon .ol-zoon-out .ol-has-out-tooltip:focus[role='tooltip'] {
+  top: 232px;
+}
+
+#mapCon .ol-zoom-extent {
+  top: 280px;
+}
+
+/* *****************************视图跳转***************************** */
+
+/* *****************************鼠标位置***************************** */
+#mousePosition {
+  position: absolute;
+  bottom: 35px;
+  left: 8px;
+  z-index: 9;
+}
+
+/* *****************************地图切换***************************** */
+div.mapToggle {
+  z-index: 9;
+  width: 50px;
+  height: 50px;
+  background: url(../images/traffic/icons.png) no-repeat;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+div#vectorMap {
+  position: absolute;
+  bottom: 20px;
+  right: 95px;
+  background-position: -255px -55px;
+  border: 2px solid #23adec;
+}
+
+div#imgMap {
+  position: absolute;
+  bottom: 20px;
+  right: 35px;
+  background-position: -170px -55px;
+}
+
+div.mapToggle p {
+  position: absolute;
+  bottom: 0;
+  width: 50px;
+  text-align: center;
+  font-weight: 600;
+  color: #fff;
+  background-color: rgba(33, 33, 33, 0.5);
+}
+
+/* *****************************实时路况显示/隐藏***************************** */
+#trafficToggle {
+  position: absolute;
+  top: 10px;
+  right: 200px;
+  width: 30px;
+  height: 30px;
+  z-index: 9;
+  background-color: #fff;
+  background-position: 7px 7px;
+  border-radius: 15px;
+  border: 2px solid #8a8a8a;
+  cursor: pointer;
+  text-align: center;
+}
+
+#trafficToggle img {
+  width: 18px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}

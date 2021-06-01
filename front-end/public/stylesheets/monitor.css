@@ -1,0 +1,28 @@
+#Monitor {
+  width: 212px;
+  height: 211px;
+  position: absolute;
+  z-index: 9999;
+  border: 6px solid#444e5a;
+  background: #757bb3b3;
+  right: 11px;
+  top: 114px;
+  display: none;
+}
+
+#turnoff-Monitoring {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 0;
+  bottom: 180px;
+  background: url('/public/images/traffic/icons.png') no-repeat;
+  background-position: -422px -23px;
+  z-index: 99999;
+  cursor: pointer;
+}
+
+video {
+  position: absolute;
+  z-index: 9999;
+}

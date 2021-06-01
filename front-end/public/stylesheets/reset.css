@@ -1,0 +1,19 @@
+/* 重置浏览器默认样式 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul,
+i {
+  font-style: normal;
+}

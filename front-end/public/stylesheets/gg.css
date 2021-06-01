@@ -1,0 +1,183 @@
+/* /地图浮动盒子公告栏 */
+#upMap-Notice {
+  display: none;
+  width: 250px;
+  height: 400px;
+  position: absolute;
+  z-index: 9999;
+  border: 8px solid#444e5a;
+  background-color: #444e5a;
+  right: 0;
+  bottom: 141px;
+  opacity: 0.9;
+  border-radius: 5px;
+}
+
+#see-Notice {
+  display: none;
+  width: 380px;
+  height: 400px;
+  position: absolute;
+  z-index: 9999;
+  border: 8px solid#444e5a;
+  background-color: #444e5a;
+  right: 0;
+  bottom: 141px;
+  opacity: 0.9;
+  border-radius: 5px;
+}
+
+/* 公告栏 */
+.STYLE-NAME {
+  margin-left: auto;
+  margin-right: auto;
+  height: 384px;
+  width: 237px;
+  background: #555;
+  padding: 1px 30px 20px 30px;
+  font: 12px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #d3d3d3;
+  text-shadow: 1px 1px 1px #444;
+  border: none;
+  border-radius: 5px;
+}
+.STYLE-NAME h1 {
+  padding: 0px 0px 20px 40px;
+  display: block;
+  border-bottom: 1px solid #444;
+  margin: 0px -30px 30px -30px;
+  text-shadow: 1px 1px 1px #3d3d3d;
+}
+.STYLE-NAMEh1 > span {
+  display: block;
+  font-size: 11px;
+  padding: 10px 0 10px 0;
+}
+.STYLE-NAME label {
+  display: block;
+  margin: 10px 0px 5px;
+}
+.STYLE-NAME label > span {
+  float: left;
+  width: 20%;
+  text-align: right;
+  padding-right: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.STYLE-NAME input[type='text'],
+.STYLE-NAME textarea {
+  border: none;
+  color: #525252;
+  height: 25px;
+  line-height: 15px;
+  margin-bottom: 6px;
+  margin-right: 6px;
+  margin-top: 2px;
+  outline: 0 none;
+  padding: 5px 0px 10px 0px;
+  width: 90%;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  /* -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); */
+  background: #dfdfdf;
+}
+
+.STYLE-NAME textarea {
+  height: 100px;
+  padding: 5px 0px 0px 5px;
+  width: 80%;
+}
+.STYLE-NAME .button #add {
+  margin: 16px 0 0 0;
+  text-align: center;
+  background: #e6e2d3;
+  border: none;
+  padding: 2px 5px 2px 5px;
+  color: #585858;
+  border-radius: 4px;
+  text-shadow: 1px 1px 1px #94928a;
+  font-weight: bold;
+  box-shadow: 1px 1px 1px #3d3d3d;
+}
+
+.STYLE-NAME .button #add:hover {
+  color: #333;
+  background-color: #ebebeb;
+}
+
+#see-Notice #notice {
+  display: none;
+  height: 383px;
+  padding: 10px;
+  background-color: #eee;
+  border-radius: 5px;
+  opacity: 0.92;
+}
+
+#see-Notice #notice p.title {
+  font-size: 15px;
+  font-weight: 600;
+  border-bottom: 2px solid #3da8d3;
+  margin-bottom: 5px;
+}
+
+#see-Notice #notice .container {
+  height: 340px;
+  width: 350px;
+  overflow: scroll;
+}
+
+#see-Notice #notice .container .notice_container {
+  font-size: 13px;
+  border: 2px solid #3da8d3;
+  border-radius: 5px;
+  margin-bottom: 3px;
+  padding: 2px;
+}
+
+#see-Notice #notice .container p.notice_content {
+  padding: 2px;
+  height: 40px;
+  font-weight: 600;
+  overflow: hidden;
+  border-bottom: 1px solid #888;
+  cursor: pointer;
+}
+
+#see-Notice #notice .container p.notice_info {
+  font-size: 12px;
+}
+
+#see-Notice #notice .container p.notice_info span.notice_time {
+  margin-left: 15px;
+}
+
+#see-Notice #noticeDetails {
+  display: none;
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 0;
+  right: 308px;
+  background-color: #eee;
+  border: 2px solid #3da8d3;
+  border-radius: 5px;
+  padding: 5px;
+  opacity: 0.85;
+}
+
+#see-Notice #noticeDetails p.title {
+  font-weight: 600;
+  padding: 0 5px 5px;
+  margin-bottom: 5px;
+  border-bottom: 2px solid #3da8d3;
+}
+
+#see-Notice #noticeDetails div.details {
+  height: 200px;
+  padding: 0 10px;
+  overflow: scroll;
+  font-weight: 600;
+}

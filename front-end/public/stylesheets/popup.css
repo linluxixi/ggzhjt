@@ -1,0 +1,117 @@
+/* popup弹框样式 */
+.ol-popup {
+  width: 300px;
+  position: absolute;
+  background-color: white;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  bottom: 40px;
+  left: -140px;
+}
+
+.ol-popup:after,
+.ol-popup:before {
+  top: 100%;
+  border: solid transparent;
+  content: ' ';
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.ol-popup:after {
+  border-top-color: white;
+  border-width: 10px;
+  left: 140px;
+  margin-left: -10px;
+}
+
+.ol-popup:before {
+  border-top-color: #cccccc;
+  border-width: 11px;
+  left: 140px;
+  margin-left: -11px;
+}
+
+.ol-popup .fr {
+  border: 1px solid #aaa;
+  border-radius: 2px;
+}
+
+.ol-popup input {
+  font-size: 15px;
+  width: 227px;
+  height: 20px;
+}
+
+.ol-popup .name div.fr {
+  font-size: 15px;
+  width: 227px;
+  height: 20px;
+}
+
+.ol-popup .note div.fr {
+  font-size: 15px;
+  width: 227px;
+  height: 50px;
+}
+
+.ol-popup p.title {
+  height: 30px;
+  border-bottom: 2px solid #8bca95;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.ol-popup p.title span {
+  position: absolute;
+  left: 20px;
+  top: 26px;
+}
+
+.ol-popup p.title .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  border: none;
+}
+
+.ol-popup div.bottom-btn {
+  height: 30px;
+  margin-top: 10px;
+}
+
+.ol-popup div.bottom-btn div {
+  position: absolute;
+  bottom: 15px;
+  width: 50px;
+  height: 25px;
+  line-height: 25px;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+}
+
+.ol-popup div.bottom-btn .info {
+  left: 20px;
+  width: 150px;
+  color: #000;
+}
+
+.ol-popup div.bottom-btn .save {
+  right: 80px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: rgb(52, 141, 177);
+}
+
+.ol-popup div.bottom-btn .delete {
+  right: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: rgb(52, 141, 177);
+}

@@ -1,0 +1,93 @@
+#viewSettingWindow {
+  display: none;
+  width: 300px;
+  position: absolute;
+  top: 100px;
+  left: 500px;
+  z-index: 9;
+}
+
+#viewSettingWindow p.title {
+  padding: 15px 20px 5px;
+  height: 30px;
+  border-bottom: 2px solid #8bca95;
+  background-color: rgba(117, 123, 131, 0.7);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#viewSettingWindow p.title span {
+  position: absolute;
+  left: 20px;
+  top: 26px;
+}
+
+#viewSettingWindow p.title .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  border: none;
+}
+
+#viewSettingWindow #trafficFlow {
+  height: 100px;
+  padding: 10px 20px 15px;
+  font-weight: 600;
+  background-color: rgba(223, 229, 236, 0.8);
+  position: relative;
+}
+
+#viewSettingWindow #trafficFlow p {
+  width: 250px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#viewSettingWindow #trafficFlow p input {
+  width: 50px;
+  height: 25px;
+  line-height: 25px;
+  margin: 0 10px;
+}
+
+#viewSettingWindow #trafficFlow div {
+  width: 18px;
+  height: 20px;
+}
+
+#trafficFlow div.colorSmooth {
+  background-color: #17a85d;
+  position: absolute;
+  top: 55px;
+  left: 65px;
+}
+
+#trafficFlow div.colorBusy {
+  background-color: #e4cc35;
+  position: absolute;
+  top: 55px;
+  left: 140px;
+}
+
+#trafficFlow div.colorJam {
+  background-color: #f7574f;
+  position: absolute;
+  top: 55px;
+  left: 214px;
+}
+
+#trafficFlow button {
+  outline: none;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  width: 50px;
+  height: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #eee;
+  background-color: rgb(58, 180, 228);
+  line-height: 25px;
+  position: absolute;
+  top: 80px;
+  right: 20px;
+}

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>光谷智慧交通用户平台</title>
+
+  <!-- 引入输入框 -->
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"
+    rel="stylesheet">
+  <!-- 引入jQuery文件 -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+  <!-- 引入CSS文件 -->
+  <link rel="stylesheet" href="/stylesheets/reset.css" />
+  <link rel="stylesheet" href="/stylesheets/common.css" />
+  <link rel="stylesheet" href="/stylesheets/users.css" />
+  <link rel="stylesheet" href="/stylesheets/catalogtree.css" />
+  <link rel="stylesheet" href="/stylesheets/gg.css" />
+  <link rel="stylesheet" href="/stylesheets/popup.css">
+  <link rel="stylesheet" href="/stylesheets/eventsTable.css">
+  
+  <!-- 引入OpenLayers脚本 -->
+  <script src="/libs/include-openlayers-local.js"></script>
+  <!-- 加载favicon -->
+  <link rel="shortcut icon" href="/images/favicon.png" />
+  <!-- 引入字体图标 -->
+  <link rel="stylesheet" href="http://at.alicdn.com/t/font_2503372_gs0kq09sgg4.css" />
+  <!-- 导出图片 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>
+  <script src="https://openlayers.org/en/v5.3.0/build/ol.js"></script>
+  <link rel="stylesheet" href="https://openlayers.org/en/v5.3.0/css/ol.css" />
+</head>
+
+<body>
+  <!-- 顶部导航 -->
+  <section id="top">
+    <!-- 系统标志 -->
+    <div id="symbol">
+      <a href="#" id="logo">
+        <img src="/images/favicon.png" alt="智慧交通" style="height: 40px; width: 40px" />
+      </a>
+      <p id="systemName">光谷智慧交通用户平台</p>
+    </div>
+    <!-- 搜索框 -->
+    <div id="search">
+      <div id="searchBtn" class="fr">
+        <img src="/images/traffic/search.png" alt="搜索" style="width: 20px; height: 20px" />
+      </div>
+      <div id="searchContent">
+        <input type="text" placeholder="交通事件查询" />
+      </div>
+    </div>
+    <!-- 功能导航 -->
+    <section id="function">
+      <ul>
+        <!-- 事件 -->
+        <li id="events" class="fl">
+          <i class="iconfont icon-shigu"></i> <span>上报路况</span>
+        </li>
+        <!-- 公告 -->
+        <li id="notices" class="fl">
+          <i class="iconfont icon-gonggao"></i> <span>公告</span>
+          <ul>
+            <li id="openNotices">
+              <i class="iconfont icon-celiang"></i> 查看公告
+            </li>
+          </ul>
+        </li>
+        <!-- 工具 -->
+        <li id="tools" class="fl">
+          <i class="iconfont icon-gongju"></i> <span>工具</span>
+          <ul>
+            <li id="measure"><i class="iconfont icon-celiang"></i> 测量</li>
+            <li id="label">
+              <i class="iconfont icon-ic_normal_biaoji"></i> 标注
+            </li>
+            <li id="exportToPic">
+              <i class="iconfont icon-tupian" id="exportPic"></i> 导出图片
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <!-- 测量工具条 -->
+    <div id="measureTool">
+      <p class="title"><span>测量</span><i class="close">✖</i></p>
+      <p class="tool">
+        <i class="iconfont icon-xian line" id="length" title="距离"></i>
+        <i class="iconfont icon-mian1 polygon" id="area" title="面积"></i>
+        <i class="iconfont icon-Eliminate clear" id="mea_quit" title="清除"></i>
+      </p>
+    </div>
+    <!-- 标注工具条 -->
+    <div id="labelTool">
+      <p class="title"><span>标注</span><i class="close fr">✖</i></p>
+      <p class="tool">
+        <i class="iconfont icon-biaojidian-01 point" title="点标注"></i>
+        <i class="iconfont icon-xian line" title="线标注"></i>
+        <i class="iconfont icon-mian1 polygon" title="面标注"></i>
+        <i class="iconfont icon-Eliminate clear" title="清除"></i>
+        <i class="iconfont icon-jinzhi pause" title="暂停标注"></i>
+      </p>
+    </div>
+    <!-- 天气时间 -->
+    <div id="weather">
+      <iframe width="500" height="40" frameborder="0" scrolling="no" hspace="0"
+        src="https://i.tianqi.com/?c=code&a=getcode&id=40&icon=1&py=wuhan&site=12"></iframe>
+    </div>
+    <div id="time">
+      <ul>
+        <li id="nowTime">
+          <i class="iconfont icon-shijian"></i>
+          <span class="time"></span>
+        </li>
+        <li id="nowDate">
+          <span class="date"></span>
+        </li>
+      </ul>
+    </div>
+    <!-- 用户 -->
+    <div id="user">
+      <div id="userInfo">
+        <a href="#">
+          <img src="/images/traffic/user.png" alt="用户头像" id="userIcon" />
+          <span id="userName">用户名</span>
+        </a>
+      </div>
+      <div id="userAction">
+        <span href="#" id="logout"><a href="http://localhost:3000">退出登录</a> 
+        </span>
+      </div>
+    </div>
+  </section>
+  <!-- 地图 -->
+  <div id="map">
+    <!-- 图层 -->
+    <div id="mapLayer"></div>
+    <!-- 地图容器 -->
+    <div id="mapCon">
+      <!-- 发布公告输入栏 -->
+      <div id="upMap-Notice">
+        <div class="close">
+          <span onclick="closeIconInfo()">✖</span>
+        </div>
+        <form action="" method="post" class="STYLE-NAME">
+          <h1>公告</h1>
+          <span>发布人员</span>
+          <input id="name" type="text" name="name" placeholder="用户名" />
+          <br />
+          <span>公告内容</span>
+          <textarea id="message" name="message" placeholder="Your Message to Us"></textarea>
+
+          <div class="form-group">
+            <label>发布时间</label>
+            <!--指定 date标记-->
+            <div class="input-group date" id="datetimepicker2">
+              <input type="text" class="form-control" />
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+            </div>
+          </div>
+        </form>
+        <div class="button">
+          <button onclick="addIconInfo()">确认添加</button>
+          <button onclick="closeIconInfo()">取 消</button>
+        </div>
+      </div>
+
+      <!-- 事件上报窗口 -->
+      <div id="eventWindow" class="box">
+        <a class="x" href="" ; onclick="msgbox(0); return false;">关闭</a>
+        驾驶人员：<input type="text" /><br />
+        事故地点：<input type="text" /><br />
+        事故细节：<input type="text" /><br />
+        <button id="suer">确定</button>
+      </div>
+      <!-- 目录树 -->
+      <div id="layerControl" class="content layerControl">
+        <!-- 图层控制样式 -->
+        <div class="title"><label>图层列表</label></div>
+        <ul id="layerTree" class="layerTree"></ul>
+      </div>
+      <!-- 地图控件 -->
+      <div id="mousePosition">
+        <span id="lon"></span>
+        <span>|</span>
+        <span id="lat"></span>
+      </div>
+      <div id="scaleLine"></div>
+      <div id="overviewMap"></div>
+      <!-- 实时路况显示/隐藏 -->
+      <div id="traffic"></div>
+      <!-- 矢量/影像切换 -->
+      <div id="vectorMap" class="mapToggle">
+        <p>地图</p>
+      </div>
+      <div id="imgMap" class="mapToggle">
+        <p>影像</p>
+      </div>
+      <!-- 路况显示切换 -->
+      <div id="trafficToggle" title="实时路况">
+        <img src="/images/traffic/trafficOff.png" alt="" />
+      </div>
+      <!-- 事件查询表格 -->
+      <div id="eventsTable">
+        <div class="tableBtn">
+          <button class="statistics">生成事件统计图</button>
+
+          <i class="close fr" title="关闭">✖</i>
+          <i class="iconfont icon-shangxia fr" title="展开/收起"></i>
+        </div>
+        <div class="eventsTable">
+          <table cellspacing="0">
+            <tr class="title">
+              <th width="150px">事件编号</th>
+              <th width="80px">事件类型</th>
+              <th width="80px">事件等级</th>
+              <th width="150px">发生时间</th>
+              <th width="200px">发生地点</th>
+              <th width="80px">车牌号</th>
+              <th width="80px">驾驶员</th>
+              <th width="80px">处理状态</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <!-- popup弹窗 -->
+      <!-- 编辑窗口 popup1 -->
+      <div id="popup1" class="ol-popup">
+        <p class="title"><span>标注</span><i class="close">✖</i></p>
+        <div id="popup-content1"></div>
+        <div class="bottom-btn">
+          <div class="save">保存</div>
+          <div class="delete">删除</div>
+        </div>
+      </div>
+      <!-- 展示窗口 popup2 -->
+      <div id="popup2" class="ol-popup">
+        <p class="title"><span>标注</span><i class="close fr">✖</i></p>
+        <div id="popup-content2"></div>
+        <div class="bottom-btn">
+          <div class="info"></div>
+          <div class="delete">删除</div>
+        </div>
+      </div>
+      <!-- 查看公告 -->
+      <div id="see-Notice">
+        <div id="notice">
+          <p class="title">
+            <span><i class="iconfont icon-gonggao"></i>施工公告</span><i class="close fr">✖</i>
+          </p>
+          <div class="container"></div>
+        </div>
+        <!-- 公告详情页 -->
+        <div id="noticeDetails">
+          <p class="title">
+            <span><i class="iconfont icon-gonggao"></i>公告详情</span><i class="close fr">✖</i>
+          </p>
+          <div class="details"></div>
+        </div>
+      </div>
+      <!-- 统计图 -->
+      <div id="highCharts">
+        <p class="title"><span>统计图</span><i class="close fr">✖</i></p>
+        <!-- 柱状图 -->
+        <div class="fl" id="column"></div>
+        <!-- 饼图 -->
+        <div class="fr" id="pie"></div>
+      </div>
+
+      <!-- 事件窗口 -->
+      <div id="eventWindow"></div>
+    </div>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/moment.js/2.22.0/moment-with-locales.js"></script>
+
+
+    <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+</body>
+<!-- 引入javaScript文件 -->
+<script src="/js/users.js"></script>
+<script src="/js/users_tool.js"></script>
+<script src="/js/gg_event.js"></script>
+<script src="/js/gg.js"></script>
+
+
+
+</html>
+
+</html>

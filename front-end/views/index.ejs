@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style_main.css" />
+    <link rel="icon" href="/images/捕获.PNG" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- 标题
+    <div class="title"><h1 class="title1">光谷智慧交通运营平台</h1></div> -->
+
+    <div class="container right-panel-active">
+      <!-- 注册 -->
+      <div class="container_form container--signup">
+        <form action="#" class="form" id="form1">
+          <h2 class="form_title">注 册</h2>
+          <input
+            type="text"
+            placeholder="Username"
+            class="input"
+            name="user_name"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            class="input"
+            name="user_password"
+          />
+          <button class="btn" id="btn1">注&nbsp册</button>
+        </form>
+      </div>
+
+      <!-- 登录 -->
+      <div class="container_form container--signin">
+        <form action="#" class="form" id="form2">
+          <h2 class="form_title">登 录</h2>
+          <input
+            type="text"
+            placeholder="Username"
+            class="input"
+            name="user_name"
+            id="username"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            class="input"
+            name="user_password"
+            id="password"
+          />
+          <div class="checkbox">
+            <input type="checkbox" id="remember" />
+            <label for="remember">Remember Me</label>
+          </div>
+          <button class="btn" id="btn2">登&nbsp录</button>
+        </form>
+      </div>
+
+      <!-- 浮层 -->
+      <div class="container_overlay">
+        <div class="overlay">
+          <div class="overlay_panel overlay--left">
+            <button class="btn" id="signIn">登录</button>
+          </div>
+          <div class="overlay_panel overlay--right">
+            <button class="btn" id="signUp">注册</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 背景 -->
+    <div class="slidershow">
+      <div
+        class="slidershow--image"
+        style="background-image: url('/images/登录3.png')"
+      ></div>
+      <div
+        class="slidershow--image"
+        style="background-image: url('/images/登录3.png')"
+      ></div>
+      <div
+        class="slidershow--image"
+        style="background-image: url('/images/登录3.png')"
+      ></div>
+      <div
+        class="slidershow--image"
+        style="background-image: url('/images/登录3.png')"
+      ></div>
+    </div>
+
+    <!-- partial -->
+    <script src="/javascripts/script.js"></script>
+  </body>
+</html>

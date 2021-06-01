@@ -1,0 +1,413 @@
+/* 顶部导航 */
+#top {
+  height: 66px;
+  padding-top: 10px;
+  position: relative;
+  background-color: #444e5a;
+  z-index: 9;
+}
+
+#symbol {
+  width: 200px;
+  position: absolute;
+  top: -2px;
+  left: 20px;
+  text-align: center;
+}
+
+#systemName {
+  margin: auto 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+#search {
+  position: absolute;
+  top: 20px;
+  left: 230px;
+  width: 230px;
+  height: 31px;
+  padding: 0 2px;
+  border: 1px solid #8bca95;
+}
+
+#searchContent {
+  width: 200px;
+  height: 30px;
+  border-right: 1px solid #8bca95;
+}
+
+#searchContent input {
+  position: absolute;
+  width: 170px;
+  height: 30px;
+  font-size: 15px;
+  color: #fff;
+  margin: 0 20px 0 10px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#searchBtn {
+  padding: 5px 1px 0 0;
+  cursor: pointer;
+}
+
+/* 功能模块 */
+#function {
+  position: absolute;
+  top: 20px;
+  left: 500px;
+  height: 30px;
+  font-size: 15px;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#function li.fl {
+  width: 100px;
+}
+
+#function .fl li:hover {
+  color: #8bca95;
+}
+
+/* #function li.fl ul {
+  background-color: #444e5a;
+  font-size: 12px;
+} */
+
+#function li.fl ul {
+  display: none;
+  margin-top: 10px;
+  background-color: #444e5a;
+  font-size: 12px;
+}
+
+#function li.fl ul li {
+  line-height: 30px;
+}
+
+/* 时间 */
+#time {
+  position: absolute;
+  top: 5px;
+  right: 190px;
+  width: 130px;
+  height: 55px;
+  color: #fff;
+}
+
+#time ul i.iconfont {
+  font-size: 30px;
+  color: #8bca95;
+}
+
+#time ul li#nowTime {
+  height: 40px;
+}
+
+#time ul li#nowTime span {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 30px;
+  position: absolute;
+  top: 7px;
+  right: 0;
+}
+
+#time ul li#nowDate {
+  margin-left: 10px;
+}
+
+/* 天气 */
+#weather {
+  position: absolute;
+  top: 77px;
+  left: 50px;
+  width: 380px;
+  height: 25px;
+  color: #fff;
+  background-color: rgba(223, 229, 236, 0.7);
+  border: 1px solid #999;
+  text-align: center;
+}
+
+#weather iframe {
+  margin-left: 10px;
+}
+
+/* 用户 */
+#user {
+  position: absolute;
+  right: 20px;
+  width: 130px;
+  height: 50px;
+}
+
+#userName {
+  position: absolute;
+  left: 40px;
+  top: 7px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#userAction {
+  font-size: 13px;
+  color: #fff;
+}
+
+/* 地图容器 */
+#mapCon {
+  height: 588px;
+  position: relative;
+}
+
+/* 放大/缩小 */
+#mapCon .ol-zoom .ol-zoom-out {
+  margin-top: 204px;
+}
+
+#mapCon .ol-zoomslider {
+  background-color: transparent;
+  top: 2.3em;
+}
+
+#mapCon .ol-touch .ol-zoom .ol-zoom-out {
+  margin-top: 212px;
+}
+
+#mapCon .ol-touch .ol-zoomslider {
+  top: 2.75em;
+}
+
+#mapCon .ol-zoom-in .ol.has-tooltip:hover[role='tooltip'],
+#mapCon .ol-zoom-in .ol-has-tooltip:focus[role='tooltip'] {
+  top: 3px;
+}
+
+#mapCon .ol-zoom-out .ol-has-tooltip:hover[role='tooltip'],
+#mapCon .ol-zoon-out .ol-has-out-tooltip:focus[role='tooltip'] {
+  top: 232px;
+}
+
+#mapCon .ol-zoom-extent {
+  top: 280px;
+}
+
+/* 视图跳转 */
+
+/* 鼠标位置 */
+#mousePosition {
+  position: absolute;
+  bottom: 5px;
+  left: 200px;
+  z-index: 9;
+}
+
+/* 鹰眼 */
+/* *****************************测量/标注工具条***************************** */
+#measureTool,
+#labelTool {
+  display: none;
+  position: absolute;
+  top: 80px;
+  right: 250px;
+  width: 200px;
+  color: #fff;
+}
+
+#measureTool .title,
+#labelTool .title {
+  border-bottom: 2px solid #8bca95;
+  background-color: rgba(117, 123, 131, 0.7);
+}
+
+#measureTool .title span,
+#labelTool .title span {
+  margin-left: 5px;
+}
+
+#measureTool .title .close,
+#labelTool .title .close {
+  margin-right: 5px;
+}
+
+#measureTool .tool,
+#labelTool .tool {
+  background-color: rgba(223, 229, 236, 0.3);
+}
+
+#measureTool .tool i,
+#labelTool .tool i {
+  font-size: 22px;
+  font-weight: 600;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+#measureTool .tool i:hover,
+#labelTool .tool i:hover {
+  color: #2facff;
+}
+
+/* 地图切换 */
+div.mapToggle {
+  z-index: 9;
+  width: 50px;
+  height: 50px;
+  background: url(../images/traffic/icons.png) no-repeat;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+div#vectorMap {
+  position: absolute;
+  bottom: 20px;
+  right: 80px;
+  background-position: -255px -55px;
+  border: 2px solid #23adec;
+}
+
+div#imgMap {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-position: -170px -55px;
+}
+
+div.mapToggle p {
+  position: absolute;
+  bottom: 0;
+  width: 47px;
+  text-align: center;
+  font-weight: 600;
+  color: #fff;
+  background-color: rgba(33, 33, 33, 0.5);
+}
+
+/* 实时路况显示/隐藏 */
+#trafficToggle {
+  position: absolute;
+  top: 10px;
+  right: 200px;
+  width: 30px;
+  height: 30px;
+  z-index: 9;
+  background-color: #fff;
+  background-position: 7px 7px;
+  border-radius: 15px;
+  border: 2px solid #8a8a8a;
+  cursor: pointer;
+  text-align: center;
+}
+
+#trafficToggle img {
+  width: 18px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+
+/* /地图浮动盒子公告栏
+#upMap-Notice {
+  width: 300px;
+  height: 400px;
+  position: absolute;
+  z-index: 9999;
+  border: 8px solid#444e5a;
+  background-color: #444e5a;
+  right: 0;
+  bottom: 73px;
+  opacity: 0.5;
+} */
+
+/* 测量/标注工具条 */
+/* #measureTool,
+#labelTool {
+  position: absolute;
+  top: 80px;
+  right: 250px;
+  width: 150px;
+  color: #fff;
+}
+
+#measureTool .title,
+#labelTool .title {
+  border-bottom: 2px solid #8bca95;
+  background-color: rgba(117, 123, 131, 0.7);
+}
+
+#measureTool .title span,
+#labelTool .title span {
+  margin-left: 5px;
+}
+
+#measureTool .title .close,
+#labelTool .title .close {
+  float: right;
+  margin-right: 5px;
+}
+
+#measureTool .tool,
+#labelTool .tool {
+  background-color: rgba(223, 229, 236, 0.3);
+}
+
+#measureTool .tool i,
+#labelTool .tool i {
+  font-size: 22px;
+  font-weight: 600;
+  margin-right: 5px;
+} */
+
+/* ********************************************事件上报框弹出样式********************************* */
+.box {
+  position: absolute;
+  width: 30%;
+  top: 50px;
+  right: 600px;
+  bottom: 300px;
+  margin-top: 5%;
+  margin: auto;
+  padding: 10px;
+  height: 250px;
+  border: 5px rgb(95, 92, 92) solid;
+  display: none;
+  /* 默认对话框隐藏 */
+  background-color: #444e5a;
+  text-align: center;
+  z-index: 9999999;
+}
+
+.box.show {
+  display: block;
+}
+
+.box .x {
+  font-size: 18px;
+  text-align: right;
+  display: block;
+}
+
+.box input {
+  width: 70%;
+  font-size: 18px;
+  margin-top: 18px;
+}
+
+#suer {
+  position: absolute;
+  width: 70px;
+  height: 30px;
+  bottom: 30px;
+  left: 300px;
+}
+
+#suer:hover {
+  background-color: rgb(85, 80, 80);
+}
